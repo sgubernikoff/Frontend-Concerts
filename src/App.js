@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Homepage";
+import { Route, NavLink, Switch } from "react-router-dom";
+import "./App.css";
+import SideNav from "./Components/SideNav";
+
+const linkStyles = {
+  display: "inline-block",
+  width: "130px",
+  padding: "12px",
+  margin: "0 6px 6px",
+  background: "#FF4F2D",
+  textDecoration: "none",
+  color: "#FF89FF",
+  fontWeight: "bold",
+  textAlign: "center",
+};
+
+// #FF4F2D
+// #FF8B74;
+// #FF89FF
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="App">
+      <SideNav />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #e6ebff;
 }
 
 .App-logo {
@@ -35,4 +36,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.leftside {
+  background-image: url("https://www.greenbiz.com/sites/default/files/styles/og_image_1200x630/public/images/articles/featured/woodstockbaby.jpg?itok=fYEIh86Z");
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0px;
+  width: 43%;
+  height: 100%;
+  z-index: 4;
+}
+
+.rightside {
+  background-image: url("https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  width: 43%;
+  right: 0%;
+  height: 100%;
+  z-index: 2;
+}
+
+.rightsider {
+  background-image: url("https://machinelearningmastery.com/wp-content/uploads/2017/01/A-Gentle-Introduction-to-the-Random-Walk-for-Times-Series-Forecasting-with-Python.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  width: 43%;
+  right: 0%;
+  height: 100%;
+  z-index: 4;
 }
