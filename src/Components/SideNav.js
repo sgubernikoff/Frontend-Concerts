@@ -10,16 +10,17 @@ const linkStyles = {
   width: "200px",
   height: "290px",
   background: "#7894FF",
-  color: "#FF89FF",
+  color: "#FF8B74",
   fontWeight: "bold",
   padding: "10px",
   textAlign: "10px",
   margin: "auto",
 };
 
+// #7894FF
 // #FF4F2D
 // #FF8B74;
-// #FF89FF
+// #7894FF
 
 function NavBar() {
   return (
@@ -29,7 +30,7 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "#FF89FF",
+          background: "#FF8B74",
           color: "#7894FF",
         }}
       >
@@ -40,18 +41,18 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "#FF89FF",
+          background: "#FF8B74",
           color: "#7894FF",
         }}
       >
-        View Concerts
+        Concerts
       </NavLink>
       <NavLink
         to="/reviews"
         exact
         style={linkStyles}
         activeStyle={{
-          background: "#FF89FF",
+          background: "#FF8B74",
           color: "#7894FF",
         }}
       >
