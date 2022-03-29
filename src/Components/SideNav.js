@@ -1,4 +1,3 @@
-import Header from "./Homepage";
 import { Route, NavLink, Switch } from "react-router-dom";
 import "../App.css";
 import Homepage from "./Homepage";
@@ -6,32 +5,25 @@ import Concert from "./Concert";
 import Review from "./Review";
 
 const linkStyles = {
-  display: "block",
-  width: "200px",
-  height: "290px",
-  background: "#7894FF",
-  color: "#FF8B74",
-  fontWeight: "bold",
-  padding: "10px",
-  textAlign: "10px",
-  margin: "auto",
+  height: "100%",
 };
 
 // #7894FF
 // #FF4F2D
-// #FF8B74;
+// #992800;
 // #7894FF
 
 function NavBar() {
   return (
-    <div>
+    <div class="divvy">
       <NavLink
         to="/"
         exact
         style={linkStyles}
         activeStyle={{
-          background: "#FF8B74",
-          color: "#7894FF",
+          background: "#992800",
+          color: "#ffaf00",
+          fontSize: "40px",
         }}
       >
         Homepage
@@ -41,8 +33,9 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "#FF8B74",
-          color: "#7894FF",
+          background: "#992800",
+          color: "#ffaf00",
+          fontSize: "40px",
         }}
       >
         Concerts
@@ -52,8 +45,9 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "#FF8B74",
-          color: "#7894FF",
+          background: "#992800",
+          color: "#ffaf00",
+          fontSize: "40px",
         }}
       >
         Leave Review
@@ -64,7 +58,7 @@ function NavBar() {
 
 function SideNav() {
   return (
-    <div class="App">
+    <div>
       <NavBar />
       <Route path="/">
         <Homepage />
