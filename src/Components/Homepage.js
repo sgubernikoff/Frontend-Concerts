@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function Homepage() {
   return (
-    <div class="leftside">
-      <img class="groupie" src="groupie.png" />
+    <div className="leftside">
+      <img className="groupie" src="groupie.png" />
     </div>
   );
 }

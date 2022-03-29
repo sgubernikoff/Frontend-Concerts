@@ -3,6 +3,7 @@ import "../App.css";
 import Homepage from "./Homepage";
 import Concert from "./Concert";
 import Review from "./Review";
+import React, { useState } from "react";
 
 const linkStyles = {
   height: "100%",
@@ -15,7 +16,7 @@ const linkStyles = {
 
 function NavBar() {
   return (
-    <div class="divvy">
+    <div className="divvy">
       <NavLink
         to="/"
         exact
@@ -56,7 +57,7 @@ function NavBar() {
   );
 }
 
-function SideNav() {
+function SideNav({ reviews, onCreateProject }) {
   return (
     <div>
       <NavBar />
@@ -64,10 +65,10 @@ function SideNav() {
         <Homepage />
       </Route>
       <Route path="/concerts">
-        <Concert />
+        <Concert reviews={reviews} />
       </Route>
       <Route path="/reviews">
-        <Review />
+        <Review onCreateProject={onCreateProject} />
       </Route>
     </div>
   );

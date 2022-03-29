@@ -1,28 +1,26 @@
-import Header from "./Components/Homepage";
-import { Route, NavLink, Switch } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import SideNav from "./Components/SideNav";
 
-const linkStyles = {
-  display: "inline-block",
-  width: "130px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "#FF4F2D",
-  textDecoration: "none",
-  color: "#FF89FF",
-  fontWeight: "bold",
-  textAlign: "center",
-};
-
-// #FF4F2D
-// #FF8B74;
-// #FF89FF
-
 function App() {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/reviews/")
+      .then((res) => res.json())
+      .then((reviews) => setReviews(reviews));
+  }, []);
+
+  function onCreateProject(newReview) {
+    setReviews((reviews) => [...reviews, newReview]);
+  }
+
   return (
-    <div class="App">
-      <SideNav />
+    <div className="App">
+      <video className="theVideo" autoPlay loop muted>
+        <source src="Hendrix.mov" type="video/mp4"></source>
+      </video>
+      <SideNav reviews={reviews} onCreateProject={onCreateProject} />
     </div>
   );
 }
