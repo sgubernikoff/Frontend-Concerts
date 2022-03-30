@@ -27,7 +27,7 @@ function NavBar() {
           fontSize: "40px",
         }}
       >
-        Homepage
+        Home
       </NavLink>
       <NavLink
         to="/concerts"
@@ -57,7 +57,7 @@ function NavBar() {
   );
 }
 
-function SideNav({ reviews, onCreateProject }) {
+function SideNav({ concerts, onCreateProject }) {
   return (
     <div>
       <NavBar />
@@ -65,7 +65,7 @@ function SideNav({ reviews, onCreateProject }) {
         <Homepage />
       </Route>
       <Route path="/concerts">
-        <Concert reviews={reviews} />
+        <Concert concerts={concerts} />
       </Route>
       <Route path="/reviews">
         <Review onCreateProject={onCreateProject} />

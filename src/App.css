@@ -70,7 +70,7 @@
   right: 0%;
   height: 100%;
   z-index: 2;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .rightsider {
@@ -88,11 +88,11 @@
 .groupie {
   position: relative;
   top: -60px;
-  animation: rotation 6s infinite linear;
+  animation: rotation 10s infinite linear;
 }
 
 .rotate {
-  animation: rotation 6s infinite linear;
+  animation: rotation 10s infinite linear;
 }
 
 @keyframes rotation {
@@ -100,7 +100,7 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -158,7 +158,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 4px solid #992800;
   min-height: 100vh;
 }
 
@@ -216,7 +215,7 @@ textarea {
 
 select {
   -webkit-appearance: menulist-button;
-  color: black;
+  color: #992800;
   width: 40%;
   text-align: center;
   height: 50px;
@@ -270,7 +269,7 @@ select:invalid {
   padding: 10px;
 }
 
-button::before {
+.button::before {
   content: "";
   border-radius: 1000px;
   min-width: calc(300px + 12px);
@@ -291,12 +290,12 @@ button::before {
   transform: translateY(-6px);
 }
 
-button:hover::before,
-button:focus::before {
+.button:hover::before,
+.button:focus::before {
   opacity: 1;
 }
 
-button::after {
+.button::after {
   content: "";
   width: 30px;
   height: 30px;
@@ -310,8 +309,8 @@ button::after {
   animation: ring 1.5s infinite;
 }
 
-button:hover::after,
-button:focus::after {
+.button:hover::after,
+.button:focus::after {
   animation: none;
   display: none;
 }
@@ -331,4 +330,91 @@ button:focus::after {
 
 .commentbox textarea {
   height: 50px;
+}
+
+.card img {
+  margin-top: 5px;
+  width: 400px;
+  height: 240px;
+  border: 0.5px solid white;
+  border-radius: 4px;
+}
+
+.back {
+  margin-top: 5px;
+  width: 400px;
+  height: 240px;
+  border: 0.5px solid white;
+  border-radius: 4px;
+  background-color: #992800;
+  margin: auto;
+  overflow: scroll;
+}
+
+.back p {
+  overflow: hidden;
+  height: 45px;
+  font-size: 18px;
+}
+
+.remove {
+  min-width: 230px;
+  min-height: 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #f0a402;
+  background: #992800;
+  background: linear-gradient(90deg, #f0a402 100%);
+  border: none;
+  border-radius: 1000px;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+}
+
+.remove::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: calc(230px + 12px);
+  min-height: calc(20px + 12px);
+  border: 3px solid #f0a402;
+  box-shadow: 0 0 60px #f0a402;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.remove:hover::before,
+.remove:focus::before {
+  opacity: 1;
+}
+
+.remove::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #f0a402;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .remove:hover::after,
+.remove:focus::after {
+  animation: none;
+  display: none;
+} */
+
+h3 {
+  color: #f0a402;
 }

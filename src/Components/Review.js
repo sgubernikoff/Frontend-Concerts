@@ -27,9 +27,13 @@ function Review({ onCreateProject }) {
         onCreateProject(savedReview);
         console.log(savedReview);
       });
+    setFormState({
+      user_id: "",
+      concert_id: "",
+      concert_rating: "",
+      comment: "",
+    });
   };
-
-  console.log(JSON.stringify(formState));
 
   return (
     <div className="rightsider">
@@ -40,22 +44,50 @@ function Review({ onCreateProject }) {
               <h3>Add Review</h3>
 
               <label htmlFor="user_id">Username</label>
-              <input
-                type="text"
-                id="user_id"
-                name="user_id"
-                onChange={handleChange}
-                value={formState.user_id}
-              />
+              <div className="selectWrapper">
+                <select
+                  className="selectBox"
+                  required
+                  type="text"
+                  id="user_id"
+                  name="user_id"
+                  onChange={handleChange}
+                  value={formState.user_id}
+                >
+                  <option value=""> Select Username</option>
+                  <option value="1">billyboy69</option>
+                  <option value="2">whydmywifeleave</option>
+                  <option value="3">oldDOG</option>
+                  <option value="4">brislord13</option>
+                  <option value="5">musicEnjoyer5</option>
+                  <option value="6">tedbundyfan00</option>
+                  <option value="7">crust!</option>
+                  <option value="8">Ted Cruz</option>
+                </select>
+              </div>
 
               <label htmlFor="concert_id">Concert</label>
-              <input
-                type="text"
-                id="concert_id"
-                name="concert_id"
-                onChange={handleChange}
-                value={formState.concert_id}
-              />
+              <div className="selectWrapper">
+                <select
+                  className="selectBox"
+                  required
+                  type="text"
+                  id="concert_id"
+                  name="concert_id"
+                  onChange={handleChange}
+                  value={formState.concert_id}
+                >
+                  <option value=""> Select Concert</option>
+                  <option value="1">John Mayer</option>
+                  <option value="2">Don Toliver</option>
+                  <option value="3">Jimi Hendrix</option>
+                  <option value="4">Insane Clown Posse</option>
+                  <option value="5">Usher</option>
+                  <option value="6">John Cena</option>
+                  <option value="7">Future</option>
+                  <option value="8">Willy Blanco</option>
+                </select>
+              </div>
 
               <label htmlFor="concert_rating">Star Rating</label>
               <div className="selectWrapper">
@@ -86,8 +118,8 @@ function Review({ onCreateProject }) {
                 />
               </div>
             </div>
-            <div class="wrap">
-              <button class="button">Submit</button>
+            <div className="wrap">
+              <button className="button">Submit</button>
             </div>
           </form>
         </section>

@@ -1,17 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
+import Carousel from "react-elastic-carousel";
 
 function Card({ item }) {
-  // function handleClick() {
-
-  //   }
-
+  const [reviews, setReviews] = useState(item.reviews);
   console.log(item);
+
+  const mapReview = reviews.map((review) => (
+    <div key={review.comment} className="back">
+      <h1>{"⭐".repeat(review.concert_rating)}</h1>
+      <h3>{review.user.username}:</h3>
+      <p>{review.comment}</p>
+      <button
+        className="remove"
+        onClick={function handleDelete() {
+          fetch(`http://localhost:9292/reviews/${review.id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          })
+            .then((resp) => resp.json())
+            .then(() =>
+              setReviews(reviews.filter((item) => review.id !== item.id))
+            );
+        }}
+      >
+        Remove Review
+      </button>
+    </div>
+  ));
+
   return (
     <div className="card">
-      <h2>{item.concert_id}</h2>
-      <h3>{item.user_id}</h3>
-      <h3>{item.concert_rating}</h3>
-      <h3>{item.comment}</h3>
+      <img className="front" src={item.gif} />
+      <Carousel>{mapReview}</Carousel>
     </div>
   );
 }

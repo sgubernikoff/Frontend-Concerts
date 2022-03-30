@@ -3,24 +3,35 @@ import "./App.css";
 import SideNav from "./Components/SideNav";
 
 function App() {
-  const [reviews, setReviews] = useState([]);
+  const [concerts, setConcerts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/reviews/")
+    fetch("http://localhost:9292/concerts/")
       .then((res) => res.json())
-      .then((reviews) => setReviews(reviews));
+      .then((concerts) => setConcerts(concerts));
   }, []);
 
-  function onCreateProject(newReview) {
-    setReviews((reviews) => [...reviews, newReview]);
+  function onCreateProject(newConcert) {
+    const matchedConcert = concerts.find((concert) => {
+      return concert.id == newConcert.concert_id;
+    });
+    matchedConcert.reviews.push(newConcert);
+    console.log(matchedConcert);
+    console.log(matchedConcert.reviews);
+    console.log(concerts);
+    setConcerts((concerts) => [...concerts, matchedConcert]);
   }
+
+  // if user id matches concert id
+
+  console.log(concerts);
 
   return (
     <div className="App">
       <video className="theVideo" autoPlay loop muted>
         <source src="Hendrix.mov" type="video/mp4"></source>
       </video>
-      <SideNav reviews={reviews} onCreateProject={onCreateProject} />
+      <SideNav concerts={concerts} onCreateProject={onCreateProject} />
     </div>
   );
 }
