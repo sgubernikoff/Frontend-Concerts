@@ -16,17 +16,13 @@ function App() {
       return concert.id == newConcert.concert_id;
     });
     matchedConcert.reviews.push(newConcert);
-    console.log(matchedConcert);
-    console.log(matchedConcert.reviews);
-    console.log(concerts);
     setConcerts((concerts) => [...concerts, matchedConcert]);
   }
-
-  // if user id matches concert id
 
   console.log(concerts);
 
   return (
+    
     <div className="App">
       <video className="theVideo" autoPlay loop muted>
         <source src="Hendrix.mov" type="video/mp4"></source>

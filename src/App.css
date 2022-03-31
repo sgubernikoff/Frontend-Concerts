@@ -12,17 +12,12 @@
   right: 0%;
   height: 100vh;
   object-fit: cover;
+  z-index: 2;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -57,7 +52,7 @@
   top: 0px;
   width: 43%;
   height: 100%;
-  z-index: 4;
+  z-index: 7;
 }
 
 .rightside {
@@ -69,7 +64,7 @@
   width: 43%;
   right: 0%;
   height: 100%;
-  z-index: 2;
+  z-index: 7;
   overflow: scroll;
 }
 
@@ -82,7 +77,7 @@
   width: 43%;
   right: 0%;
   height: 100%;
-  z-index: 1;
+  z-index: 7;
 }
 
 .groupie {
@@ -91,8 +86,18 @@
   animation: rotation 10s infinite linear;
 }
 
-.rotate {
-  animation: rotation 10s infinite linear;
+a {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+a:hover {
+  -webkit-transform: scale(1.12);
+  -moz-transform: scale(1.12);
+  -o-transform: scale(1.12);
+  -ms-transform: scale(1.12);
+  transform: scale(1.12);
 }
 
 @keyframes rotation {
@@ -160,9 +165,8 @@ html {
   padding: 0;
   min-height: 100vh;
 }
-
-.form-box input,
-textarea {
+/* 
+.form-box textarea {
   display: block;
   width: 90%;
   padding: 0.7rem 0.8rem 0.5rem 0.8rem;
@@ -171,12 +175,15 @@ textarea {
   font-size: 18px;
   margin: 4%;
   color: #992800;
-  text-align: center;
   font-weight: bold;
-}
+  overflow-wrap: break-word;
+  word-break: break-all;
+  overflow: scroll;
+  resize: none;
+  border: none;
+} */
 
-.commentbox input,
-textarea {
+.commentbox textarea {
   display: block;
   width: 90%;
   padding: 2.7rem 0.8rem 02.7rem 0.8rem;
@@ -187,8 +194,14 @@ textarea {
   color: #992800;
   font-weight: bold;
   overflow-wrap: break-word;
-  word-break: break-all;
+  /* word-break: break-all; */
   overflow: hidden;
+  resize: none;
+  border: none;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .form-box textarea {
@@ -198,7 +211,7 @@ textarea {
 .form-box label {
   display: block;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
   /* margin: 0 0 3vh 0; */
@@ -353,8 +366,9 @@ select:invalid {
 
 .back p {
   overflow: hidden;
-  height: 45px;
-  font-size: 18px;
+  height: 54px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .remove {
@@ -417,4 +431,8 @@ select:invalid {
 
 h3 {
   color: #f0a402;
+}
+
+.audio {
+  margin-top: 44%;
 }

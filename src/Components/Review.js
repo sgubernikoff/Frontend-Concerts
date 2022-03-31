@@ -26,7 +26,11 @@ function Review({ onCreateProject }) {
       .then((savedReview) => {
         onCreateProject(savedReview);
         console.log(savedReview);
+      })
+      .then(() => {
+        window.location.reload();
       });
+
     setFormState({
       user_id: "",
       concert_id: "",
@@ -78,9 +82,9 @@ function Review({ onCreateProject }) {
                   value={formState.concert_id}
                 >
                   <option value=""> Select Concert</option>
-                  <option value="1">John Mayer</option>
-                  <option value="2">Don Toliver</option>
-                  <option value="3">Jimi Hendrix</option>
+                  <option value="1">Jimi Hendrix</option>
+                  <option value="2">John Mayer</option>
+                  <option value="3">Don Toliver</option>
                   <option value="4">Insane Clown Posse</option>
                   <option value="5">Usher</option>
                   <option value="6">John Cena</option>
@@ -109,7 +113,9 @@ function Review({ onCreateProject }) {
               </div>
               <div className="commentbox">
                 <label htmlFor="comment">Comment</label>
-                <input
+                <textarea
+                  rows="8"
+                  cols="25"
                   type="text"
                   id="comment"
                   name="comment"

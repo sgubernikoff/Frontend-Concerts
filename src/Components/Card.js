@@ -31,7 +31,7 @@ function Card({ item }) {
   return (
     <div className="card">
       <img className="front" src={item.gif} />
-      <Carousel>{mapReview}</Carousel>
+      <Carousel className="caro">{mapReview}</Carousel>
     </div>
   );
 }
